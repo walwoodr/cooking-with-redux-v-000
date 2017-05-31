@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ConnectedAddIngredients } from '../ingredients/AddIngredients';
 
 export class Recipes extends Component {
   render(){
+    console.log(this.props)
     return(
         <div>
           <ul>
 
           {this.props.recipes.map((recipe, index)=>{
-            return <li key={index}> name: {recipe.name} calories: {recipe.calories}</li>
+            return <li key={index}> name: {recipe.name} ({recipe.calories} calories) <ConnectedAddIngredients selectedIngredients={recipe.ingredientIds} recipe={recipe} /></li>
           })}
           </ul>
         </div>

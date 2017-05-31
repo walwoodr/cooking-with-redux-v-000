@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addRecipe } from '../../actions/recipes';
-import {ConnectedRecipes} from './Recipes';
+import { ConnectedRecipes } from './Recipes';
 
 export class RecipesInput extends Component {
   constructor(props){
     super(props);
     this.state = {
       name: '',
-      calories: ''
+      calories: '',
+      ingredientIds: []
     }
   }
 
@@ -18,7 +19,8 @@ export class RecipesInput extends Component {
     this.props.addRecipe(this.state);
     this.setState({
       name: '',
-      calories: ''
+      calories: '',
+      ingredientIds: []
     })
   }
 
