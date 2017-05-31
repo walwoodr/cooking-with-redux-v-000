@@ -4,7 +4,6 @@ import { ConnectedAddIngredients } from '../ingredients/AddIngredients';
 
 export class Recipes extends Component {
   render(){
-    console.log(this.props)
     return(
         <div>
           <ul>
